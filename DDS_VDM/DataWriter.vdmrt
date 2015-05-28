@@ -1,0 +1,10 @@
+class DataWriter
+
+operations
+public DataWriter : Topic ==> DataWriter
+DataWriter (topic) == skip;
+
+public write : Publisher`TStype ==> ()
+write (data) == skip;
+
+end DataWriter

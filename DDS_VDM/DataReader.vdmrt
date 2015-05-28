@@ -1,0 +1,10 @@
+class DataReader
+
+operations
+public DataReader : Topic ==> DataReader
+DataReader (topic) == skip;
+
+public read : Topic ==> ()
+read (data) == skip;
+
+end DataReader

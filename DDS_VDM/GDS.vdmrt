@@ -1,0 +1,34 @@
+class GDS
+
+instance variables
+
+--TODO : store topics, DWs and DRs
+
+public static topics : set of Topic := {};
+public static dataWriters : set of DataWriter := {};
+public static dataReaders : set of DataReader := {};
+
+operations
+
+public static RegisterTopic : seq of char ==> Topic
+RegisterTopic (name) == 
+
+	(
+	dcl topic : Topic := new Topic(name);
+	topics := topics union {topic};
+	return topic;
+	
+	);
+
+public RegisterDataWriter : Topic ==> DataWriter
+RegisterDataWriter(topic) == (
+	
+	dcl dataWriter : DataWriter := new DataWriter(topic);
+	return dataWriter;
+
+);
+
+public RegisterDataReader : Topic ==> ()
+RegisterDataReader(topic) == skip;
+
+end GDS

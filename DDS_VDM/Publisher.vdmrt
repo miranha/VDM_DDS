@@ -1,0 +1,36 @@
+class Publisher
+
+types
+public static TempScale = <CELSIUS> | <KELVIN>;
+
+public static TStype :: id : nat
+					temp : int
+					scale : TempScale;
+
+instance variables
+
+operations
+
+public Run : () ==> ()
+Run () == 
+	(
+		-- Register a Topic
+		dcl tsTopic : Topic := GDS`RegisterTopic("TempSensorTopic");
+	
+		-- Create a DataWriter
+		dcl dw : DataWriter := new DataWriter(tsTopic);
+		
+		-- Create a data value
+		dcl ts : TStype := mk_TStype(1,26,<CELSIUS>);
+		
+		dw.write(ts);
+	
+	
+		IO`print("Runned Publisher");
+			
+	
+	
+	--return is_Topic(tsTopic);
+	);
+
+end Publisher

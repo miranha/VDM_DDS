@@ -1,0 +1,14 @@
+class Topic
+
+instance variables
+name : seq of char;
+type : Publisher`TStype;
+ 
+operations
+public Topic : seq of char ==> Topic
+Topic (IDname) == (
+	name := IDname
+	
+	);
+
+end Topic
